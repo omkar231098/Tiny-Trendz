@@ -1,17 +1,17 @@
 const express = require("express");
-const { ProductModel } = require("../Model/product.model");
-productRouter = express.Router();
+const { CartModel } = require("../Model/cart.model");
+cartRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const { authenticate } = require("../middlewares/authenticator");
 
 
 // get routes access all products
-productRouter.get("/", authenticate,async (req, res) => {
+cartRouter.get("/", authenticate,async (req, res) => {
   
   const token = req.headers.authorization;
   const decoded = jwt.verify(token, "masai");
   try {
-    const product = await ProductModel.find();  //{userID:decoded.userID}
+    const product = await CartModel.find({userID:decoded.userID});
     res.status(200).send(product);
   } catch (err) {
     res.status(404).send({ msg: "Not able to read" });
@@ -19,11 +19,11 @@ productRouter.get("/", authenticate,async (req, res) => {
 });
 
 // get particular product
-productRouter.get("/:userid", authenticate,async (req, res) => {
+cartRouter.get("/:userid", authenticate,async (req, res) => {
   const { userid } = req.params;
   
   try {
-    const product = await ProductModel.find({ _id: userid });
+    const product = await CartModel.find({ _id: userid });
     res.status(200).send(product);
   } catch (err) {
     res.status(404).send({ msg: "Not able to read" });
@@ -31,11 +31,11 @@ productRouter.get("/:userid", authenticate,async (req, res) => {
 });
 
 // post routes to add products in database
-productRouter.post("/add", authenticate, async (req, res) => {
+cartRouter.post("/add", authenticate, async (req, res) => {
   const payload = req.body;
 
   try {
-    const product = new ProductModel(payload);
+    const product = new CartModel(payload);
     await product.save();
     res.status(200).send({ msg: "New Product has been Added in Database" });
   } catch (err) {
@@ -44,11 +44,11 @@ productRouter.post("/add", authenticate, async (req, res) => {
 });
 
 // patch routes to update the product
-productRouter.put("/update/:userid",authenticate, async (req, res) => {
+cartRouter.put("/update/:userid",authenticate, async (req, res) => {
   const { userid } = req.params;
   const payload = req.body;
   try {
-    await ProductModel.findByIdAndUpdate({ _id: userid }, payload);
+    await CartModel.findByIdAndUpdate({ _id: userid }, payload);
     res.status(200).send("Product has been updated");
   } catch (err) {
     res.status(404).send({ msg: "Not able to update" });
@@ -56,11 +56,11 @@ productRouter.put("/update/:userid",authenticate, async (req, res) => {
 });
 
 // delete route to delete the product
-productRouter.delete("/delete/:userid",authenticate, async (req, res) => {
+cartRouter.delete("/delete/:userid",authenticate, async (req, res) => {
   const { userid } = req.params;
 
   try {
-    await ProductModel.findByIdAndDelete({ _id: userid });
+    await CartModel.findByIdAndDelete({ _id: userid });
     res.status(200).send("Product has been deleted");
   } catch (err) {
     res.status(404).send({ msg: "Not able to delete" });
@@ -70,4 +70,4 @@ productRouter.delete("/delete/:userid",authenticate, async (req, res) => {
 
 
 
-module.exports = { productRouter };
+module.exports = { cartRouter };
