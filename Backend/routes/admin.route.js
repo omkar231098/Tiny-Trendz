@@ -1,23 +1,23 @@
 const express = require("express");
-const { UserModel } = require("../Model/user.model");
+const {AdminModel } = require("../Model/admin.model");
 const bycrypt = require("bcrypt");
-userRouter = express.Router();
+adminRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const { authenticate } = require("../middlewares/authenticator");
 
 // post route to register the user
 
-userRouter.post("/register", async (req, res) => {
+adminRouter.post("/register", async (req, res) => {
   const { name,email, password } = req.body;
 
   try {
-    const UserPresent = await UserModel.findOne({ email });
+    const UserPresent = await AdminModel.findOne({ email });
 
     if (UserPresent) {
-      res.status(200).send({ Message: "User is already Registerd" });
+      res.status(200).send({ Message: "Admin is already Registerd" });
     }
     const HashPassword = await bycrypt.hash(password, 12);
-    const NewUser = new UserModel({
+    const NewUser = new AdminModel({
       name,
       email,
       password: HashPassword,
@@ -34,13 +34,13 @@ userRouter.post("/register", async (req, res) => {
 
 // post route to login the user
 
-userRouter.post("/login", async (req, res) => {
+adminRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const UserPresent = await UserModel.findOne({ email });
+    const UserPresent = await AdminModel.findOne({ email });
     if (!UserPresent) {
-      res.status(200).send({ msg: "User is not register yet!!" });
+      res.status(200).send({ msg: "Admin is not register yet!!" });
     }
 
     const validpassword = await bycrypt.compare(password, UserPresent.password);
@@ -58,9 +58,9 @@ userRouter.post("/login", async (req, res) => {
 });
 
 // get route access the users database
-userRouter.get("/",authenticate, async (req, res) => {
+adminRouter.get("/",authenticate, async (req, res) => {
   try {
-    const user = await UserModel.find();
+    const user = await AdminModel.find();
     res.status(200).send(user);
   } catch (err) {
     res.status(404).send({ msg: "Not able to read" });
@@ -68,11 +68,11 @@ userRouter.get("/",authenticate, async (req, res) => {
 });
 
 // patch route to update the users
-userRouter.patch("/update/:userid",authenticate, async (req, res) => {
+adminRouter.patch("/update/:userid",authenticate, async (req, res) => {
   const { userid } = req.params;
   const payload = req.body;
   try {
-    await UserModel.findByIdAndUpdate({ _id: userid }, payload);
+    await AdminModel.findByIdAndUpdate({ _id: userid }, payload);
     res.status(200).send("User has been updated");
   } catch (err) {
     res.status(404).send({ msg: "Not able to update" });
@@ -80,11 +80,11 @@ userRouter.patch("/update/:userid",authenticate, async (req, res) => {
 });
 
 // delete route to delete the user
-userRouter.delete("/delete/:userid",authenticate, async (req, res) => {
+adminRouter.delete("/delete/:userid",authenticate, async (req, res) => {
   const { userid } = req.params;
 
   try {
-    await UserModel.findByIdAndDelete({ _id: userid });
+    await AdminModel.findByIdAndDelete({ _id: userid });
     res.status(200).send("User has been deleted");
   } catch (err) {
     res.status(404).send({ msg: "Not able to delete" });
@@ -99,4 +99,4 @@ userRouter.delete("/delete/:userid",authenticate, async (req, res) => {
 
 
 
-module.exports = { userRouter };
+module.exports = { adminRouter };
