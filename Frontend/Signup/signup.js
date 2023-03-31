@@ -24,6 +24,10 @@ let registerUserEmail = document.getElementById("register-user-email");
 let registerUserPassword = document.getElementById("register-user-passowrd");
 let registerUserButton = document.getElementById("register-user");
 
+let LoginUserEmail = document.getElementById("login-user-email");
+let LoginUserPassword = document.getElementById("login-user-passowrd");
+let LoginUserButton = document.getElementById("login-user");
+
 registerUserButton.addEventListener("click", function (e) {
 
  
@@ -41,6 +45,7 @@ registerUserButton.addEventListener("click", function (e) {
 
 
   function registerUser(UserName,  email, Password) {
+    
   fetch("http://localhost:4500/user/register", {
     method: "POST",
     headers: {
@@ -56,3 +61,44 @@ registerUserButton.addEventListener("click", function (e) {
     .then((data) => console.log(data))
     .catch((error) => console.error(error));
 }
+
+
+// Login form code======>
+
+
+
+
+LoginUserButton.addEventListener("click", function (e) {
+  
+      alert("Login User Successfully");
+  
+      e.preventDefault();
+  
+      let UserName = LoginUserEmail.value;
+     
+      let Password = LoginUserPassword.value;
+  
+      registerUser(UserName, Password);
+   
+  });
+  
+  function registerUser(UserName, Password) {
+    fetch("http://localhost:4500/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+       email: UserName,
+        password: Password
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) =>{console.log(data)
+     localStorage.setItem("token",data.token)
+     window.open("../Products/product.html");
+     
+      } )
+      .catch((error) => console.error(error));
+  }
+  
