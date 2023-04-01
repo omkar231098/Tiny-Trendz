@@ -364,7 +364,7 @@
       }
       
       #data-list-wrapper {
-        border: 1px solid rgb(0, 255, 110);
+        border: 1px solid rgb(26, 68, 44);
         display: grid;
         width: 73%;
         grid-template-columns: repeat(1, 1fr);

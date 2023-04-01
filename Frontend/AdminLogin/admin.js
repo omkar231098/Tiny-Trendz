@@ -31,7 +31,7 @@ let LoginUserButton = document.getElementById("login-user");
 registerUserButton.addEventListener("click", function (e) {
 
  
-      alert("Register User Successfully");
+      // alert("Register User Successfully");
   
       e.preventDefault();
   
@@ -46,7 +46,7 @@ registerUserButton.addEventListener("click", function (e) {
 
   function registerUser(UserName,  email, Password) {
     
-  fetch("http://localhost:4500/user/register", {
+  fetch("http://localhost:4500/admin/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -58,8 +58,12 @@ registerUserButton.addEventListener("click", function (e) {
     }),
   })
     .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
+    .then((data) =>{console.log(data)
+    alert("Register User Successfully")
+    })
+    .catch((error) => {console.error(error)
+        alert("Please Check the Details Again!!")
+    });
 }
 
 
@@ -83,7 +87,7 @@ LoginUserButton.addEventListener("click", function (e) {
   });
   
   function registerUser1(UserName, Password) {
-    fetch("http://localhost:4500/user/login", {
+    fetch("http://localhost:4500/admin/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -96,7 +100,8 @@ LoginUserButton.addEventListener("click", function (e) {
       .then((response) => response.json())
       .then((data) =>{console.log(data)
      localStorage.setItem("token",data.token)
-     window.open("../Products/product.html");
+    
+     window.open("../AdminData/admindata.html");
      
       } )
       .catch((error) => console.error(error));

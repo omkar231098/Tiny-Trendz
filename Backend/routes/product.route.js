@@ -6,13 +6,134 @@ const { authenticate } = require("../middlewares/authenticator");
 
 
 // get routes access all products
-productRouter.get("/", authenticate,async (req, res) => {
+productRouter.get("/",authenticate,async (req, res) => {
+  
   
   const token = req.headers.authorization;
   const decoded = jwt.verify(token, "masai");
   try {
     const product = await ProductModel.find();  //{userID:decoded.userID}
     res.status(200).send(product);
+  } catch (err) {
+    res.status(404).send({ msg: "Not able to read" });
+  }
+});
+
+
+// routes for brand filter
+productRouter.get("/bran",  async (req, res) => {
+  const token = req.headers.authorization;
+  const decoded = jwt.verify(token, "masai");
+
+  try {
+    let brandsArray = [];
+    const { brand } = req.query;
+
+    if (Array.isArray(brand)) {
+      brandsArray = brand;
+    } else {
+      brandsArray.push(brand);
+    }
+
+    let query = { brand: { $in: brandsArray } };
+
+    
+
+    const products = await ProductModel.find(query);
+    res.status(200).send(products);
+  } catch (err) {
+    res.status(404).send({ msg: "Not able to read" });
+  }
+});
+// routes for sleeve filter
+productRouter.get("/slev",  async (req, res) => {
+  const token = req.headers.authorization;
+  const decoded = jwt.verify(token, "masai");
+
+  try {
+    let brandsArray = [];
+    const { sleeve } = req.query;
+
+    if (Array.isArray(sleeve)) {
+      brandsArray = sleeve;
+    } else {
+      brandsArray.push(sleeve);
+    }
+
+    let query = { sleeve: { $in: brandsArray } };
+
+    
+
+    const products = await ProductModel.find(query);
+    res.status(200).send(products);
+  } catch (err) {
+    res.status(404).send({ msg: "Not able to read" });
+  }
+});
+
+productRouter.get("/patt",  async (req, res) => {
+  const token = req.headers.authorization;
+  const decoded = jwt.verify(token, "masai");
+
+  try {
+    let brandsArray = [];
+    const { pattern } = req.query;
+
+    if (Array.isArray(pattern)) {
+      brandsArray = pattern;
+    } else {
+      brandsArray.push(pattern);
+    }
+
+    let query = { pattern: { $in: brandsArray } };
+
+    
+
+    const products = await ProductModel.find(query);
+    res.status(200).send(products);
+  } catch (err) {
+    res.status(404).send({ msg: "Not able to read" });
+  }
+});
+
+productRouter.get("/mat",  async (req, res) => {
+  const token = req.headers.authorization;
+  const decoded = jwt.verify(token, "masai");
+
+  try {
+    let brandsArray = [];
+    const { material } = req.query;
+
+    if (Array.isArray(material)) {
+      brandsArray = material;
+    } else {
+      brandsArray.push(material);
+    }
+
+    let query = { material: { $in: brandsArray } };
+
+    
+
+    const products = await ProductModel.find(query);
+    res.status(200).send(products);
+  } catch (err) {
+    res.status(404).send({ msg: "Not able to read" });
+  }
+});
+
+productRouter.get("/price", async (req, res) => {
+  const token = req.headers.authorization;
+  const decoded = jwt.verify(token, "masai");
+
+  try {
+    const { minPrice, maxPrice } = req.query;
+
+    let query = {
+      price: { $gte: Number(minPrice), $lte: Number(maxPrice) },
+    };
+
+    const products = await ProductModel.find(query);
+    res.status(200).send(products);
   } catch (err) {
     res.status(404).send({ msg: "Not able to read" });
   }
