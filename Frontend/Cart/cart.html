@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    Cart Page
+    </title>
+    <!-- Google Fonts (poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google material fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../Cart/cart.css" />
+<body>
+    <part1 id="part1">
+        <nav-1 id="navbar-1">
+          <div id="logodiv">
+            <div>
+              <a href="../Index/index.html"
+                ><img
+                  width="98%"
+                  src="C:\Users\Admin\Desktop\vestal-branch-2641\Frontend\Images\Pink and Purple Cute Kids Playground Logo.png"
+                  alt="Logo"
+              /></a>
+            </div>
+  
+            <div>
+              <input
+                id="searchbar"
+                type="text"
+                placeholder="Search for a Category,Brand or Product"
+              />
+            </div>
+          </div>
+  
+          <div id="navmenu1">
+            <div>
+              <a style="text-decoration: none" href="">Stores & Pre-Schools</a>
+            </div>
+            <div>
+              <a style="text-decoration: none" href="">Support</a>
+            </div>
+            <div>
+              <a style="text-decoration: none" href="">Track Order</a>
+            </div>
+            <div id="loginbox">
+              <a style="text-decoration: none; color: white" href="../Signup/signup.html">Login/Register</a>
+            </div>
+            <div id="registerbox">
+              <a style="text-decoration: none; color: white" href="">Admin</a>
+            </div>
+            <div id="cartbox">
+              <a class="notification" style="text-decoration: none" href=""
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="currentColor"
+                  class="bi bi-cart"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                  />
+                </svg>
+                <span class="badge">4</span></a
+              >
+            </div>
+          </div>
+        </nav-1>
+  
+        <nav id="pricedata">
+<!-- <div id="pricebox">
+    <div id="totalproduct">Total Products <h3 id="valuetotal">0</h3></div>
+    <div id="totalprice">Total Price <h3 id="valueprice">0 /-</h3> </div>
+    <div id="payment">Continue Payment</div>
+</div> -->
+<div id="cart-info">
+  <div>
+    <div>Cart Total Price : <span id="valueprice">0</span></div>
+    <div>Total Items : <span id="valuetotal">0</span></div>
+    <div><bUtton onClick="window.location.href='../Payment/payment.html'" id="place-order-btn">Place Order</bUtton></div>
+  </div>
+</div>
+
+        </nav>
+
+
+
+
+
+
+
+    </part1> 
+
+
+
+<part2 id="part-2">
+  <div id="data-list-wrapper">
+    <!-- Append the Products Here -->
+  </div>
+
+</part2>
+
+
+
+</body>
+</html>
+<script src="../Cart/cart.js"></script>

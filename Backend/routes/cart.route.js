@@ -61,7 +61,7 @@ cartRouter.delete("/delete/:userid",authenticate, async (req, res) => {
 
   try {
     await CartModel.findByIdAndDelete({ _id: userid });
-    res.status(200).send("Product has been deleted");
+    res.status(200).send("Product has been deleted from cart");
   } catch (err) {
     res.status(404).send({ msg: "Not able to delete" });
   }

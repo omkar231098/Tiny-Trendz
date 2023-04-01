@@ -5,6 +5,13 @@ window.addEventListener("load", () => {
   fetchAndRenderEmployees();
 });
 
+function reset() {
+  fetchAndRenderEmployees();
+}
+
+
+
+
 let mainSection = document.getElementById("data-list-wrapper");
 
 function fetchAndRenderEmployees() {
@@ -58,7 +65,7 @@ function renderCardList(data) {
   buttons1.forEach((button) => {
     button.addEventListener("click", function (event) {
       const currentId = event.target.id;
-      populateEditForms1(currentId);
+      populateEditForms5(currentId);
       // console.log(`Clicked button id: ${currentId}`);
     });
   });
@@ -86,4 +93,324 @@ function getCard(_id, name,img, price,category,brand,color,age,quantity,sleeve,n
 `;
 
   return card;
+}
+
+
+
+
+function populateEditForms5(currentId) {
+  fetch(`http://localhost:4500/product/${currentId}`, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      Authorization: localStorage.getItem("token"),
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      // handle error
+    })
+    .then((data) => {
+let load=data[0]
+registerUser(load)
+      function registerUser(load) {
+        fetch("http://localhost:4500/cart/add", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: localStorage.getItem("token"),
+          },
+          body: JSON.stringify(load),
+        })
+          .then((response) => response.json())
+          .then((data1) => {
+            console.log(data1);
+           
+          })
+          .catch((error) => console.error(error));
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+    .catch((error) => {
+      // handle error
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// filter codes
+const categoryCheckboxes = document.querySelectorAll('input[name="checkbox-filter-1"]');
+
+
+
+// brands filter
+categoryCheckboxes.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    // Get all the selected category values
+    const selectedCategories = [];
+    categoryCheckboxes.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        selectedCategories.push(checkbox.value);
+      }
+    });
+    // Update the display with the selected categories
+     populateEditForms(selectedCategories);
+     console.log(selectedCategories)
+  });  
+});
+
+function populateEditForms(brands) {
+  let url = "http://localhost:4500/product/bran?";
+  brands.forEach((brand, index) => {
+    url += `brand=${brand}`;
+    if (index < brands.length - 1) {
+      url += "&";
+    }
+  });
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      Authorization: localStorage.getItem("token"),
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      // handle error
+    })
+    .then((data) => {
+      renderCardList(data);
+    })
+    .catch((error) => {
+      // handle error
+    });
+}
+
+const categoryCheckboxes1 = document.querySelectorAll('input[name="checkbox-filter-3"]');
+
+
+// sleeve filter
+categoryCheckboxes1.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    // Get all the selected category values
+    const selectedCategories1 = [];
+    categoryCheckboxes1.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        selectedCategories1.push(checkbox.value);
+      }
+    });
+    // Update the display with the selected categories
+     populateEditForms1(selectedCategories1);
+     console.log(selectedCategories1)
+  });  
+});
+
+function populateEditForms1(brands) {
+  let url = "http://localhost:4500/product/slev?";
+  brands.forEach((brand, index) => {
+    url += `sleeve=${brand}`;
+    if (index < brands.length - 1) {
+      url += "&";
+    }
+  });
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      Authorization: localStorage.getItem("token"),
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      // handle error
+    })
+    .then((data) => {
+      renderCardList(data);
+    })
+    .catch((error) => {
+      // handle error
+    });
+}
+
+
+const categoryCheckboxes2 = document.querySelectorAll('input[name="checkbox-filter-4"]');
+
+categoryCheckboxes2.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    // Get all the selected category values
+    const selectedCategories2 = [];
+    categoryCheckboxes2.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        selectedCategories2.push(checkbox.value);
+      }
+    });
+    // Update the display with the selected categories
+     populateEditForms2(selectedCategories2);
+     console.log(selectedCategories2)
+  });  
+});
+
+function populateEditForms2(brands) {
+  let url = "http://localhost:4500/product/patt?";
+  brands.forEach((brand, index) => {
+    url += `pattern=${brand}`;
+    if (index < brands.length - 1) {
+      url += "&";
+    }
+  });
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      Authorization: localStorage.getItem("token"),
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      // handle error
+    })
+    .then((data) => {
+      renderCardList(data);
+    })
+    .catch((error) => {
+      // handle error
+    });
+}
+
+const categoryCheckboxes3 = document.querySelectorAll('input[name="checkbox-filter-5"]');
+
+categoryCheckboxes3.forEach(function(checkbox) {
+  checkbox.addEventListener('change', function() {
+    // Get all the selected category values
+    const selectedCategories3 = [];
+    categoryCheckboxes3.forEach(function(checkbox) {
+      if (checkbox.checked) {
+        selectedCategories3.push(checkbox.value);
+      }
+    });
+    // Update the display with the selected categories
+     populateEditForms3(selectedCategories3);
+     console.log(selectedCategories3)
+  });  
+});
+
+function populateEditForms3(brands) {
+  let url = "http://localhost:4500/product/mat?";
+  brands.forEach((brand, index) => {
+    url += `material=${brand}`;
+    if (index < brands.length - 1) {
+      url += "&";
+    }
+  });
+  fetch(url, {
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      Authorization: localStorage.getItem("token"),
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      // handle error
+    })
+    .then((data) => {
+      renderCardList(data);
+    })
+    .catch((error) => {
+      // handle error
+    });
+}
+
+
+function handlefilter() {
+  
+  const minPrice = document.getElementById("lower").value;
+  const maxPrice = document.getElementById("upper").value;
+
+  populateEditForms4(minPrice, maxPrice)
+
+  function populateEditForms4(minPrice, maxPrice) {
+    let url = `http://localhost:4500/product/price?minPrice=${minPrice}&maxPrice=${maxPrice}`;
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        // handle error
+      })
+      .then((data) => {
+        renderCardList(data);
+      })
+      .catch((error) => {
+        // handle error
+      });
+  }
+
+
 }
