@@ -1,170 +1,288 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
 #part1 {
-    display: flex;
-    margin: auto;
-      /* border: 1px solid red; */
-    width: 100%;
-    }
+  display: flex;
+  margin: auto;
+  /* border: 1px solid red; */
+  width: 100%;
+}
 
-    #navbar-1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        background-color: #fff;
-        z-index: 2;
-      }
-      #logodiv {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 520px;
-        height: auto;
-        column-gap: 38px;
-        align-items: center;
-      }
-      #searchbar{
-        width: 300px;
-        height: 25px;
-        background-color: black;
-        border-radius: 5px;
-        font-size: 13px;
-        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-          rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-      }
-      #navmenu1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 650px;
-        height: auto;
-        margin-right: 50px;
-      
-        align-items: center;
-      }
-      .notification {
-        color: #611973;
-        text-decoration: none;
-      
-        position: relative;
-        display: inline-block;
-        border-radius: 2px;
-      }
-      #loginbox {
-        background-color: #ff5757;
-        padding: 10px 20px 10px 20px;
-        border-radius: 50px;
-      }
-      #registerbox {
-        background-color: #611973;
-        padding: 10px 20px 10px 20px;
-        border-radius: 50px;
-      }
-      
-      /* .notification:hover {
+#navbar-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
+  z-index: 2;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+#logodiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 520px;
+  height: auto;
+  column-gap: 38px;
+  align-items: center;
+}
+#searchbar {
+  width: 300px;
+  height: 25px;
+  background-color: black;
+  color: aliceblue;
+  border-radius: 5px;
+  font-size: 13px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+#navmenu1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 650px;
+  height: auto;
+  margin-right: 50px;
+
+  align-items: center;
+}
+.notification {
+  color: #611973;
+  text-decoration: none;
+
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+#loginbox {
+  background-color: #ff5757;
+  padding: 10px 20px 10px 20px;
+  border-radius: 50px;
+}
+#registerbox {
+  background-color: #611973;
+  padding: 10px 20px 10px 20px;
+  border-radius: 50px;
+}
+
+/* .notification:hover {
          background: rgb(0, 0, 0);
          color: white;
       } */
-      
-      .notification .badge {
-        position: absolute;
-        top: -18px;
-        right: -10px;
-        padding: 3px 9px;
-        border-radius: 90%;
-        background-color: #ff5757;
-        color: white;
-      }
+
+.notification .badge {
+  position: absolute;
+  top: -18px;
+  right: -10px;
+  padding: 3px 9px;
+  border-radius: 90%;
+  background-color: #ff5757;
+  color: white;
+  display: none;
+}
 
 /* part 2 css */
-      #part-2{
-        display: flex;
-       flex-direction: column;
-        margin: auto;
-        width: 100%;
-        margin-top: 80px;
-        border: 1px solid red;
-        /* z-index: -1; */
-         }
-   
-         #Fetch-Product {
-          display: flex;
-          margin: auto;
-          width: 85%;
-          margin-top: 20px;
-        }
-        
-        #data-list-wrapper {
-          border: 1px solid rgb(26, 68, 44);
-          display: grid;
-          width: 73%;
-          grid-template-columns: repeat(1, 1fr);
-          margin: auto;
-          height: auto;
-          box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-        }
-        .card-list{
-          border: 1px solid red;
-          display: grid;
-          width: 100%;
-          height: auto;
-          grid-template-columns: repeat(4, 1fr);
-          margin: auto;
-          gap: 10px;
-          box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-        }
-        .card-list > div > img {
-          width: 100%;
-          height: 50%;
-        }
-        
-        .card {
-          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-          padding: 10px;
-          border: 1px solid red;
-          text-align: center;
-        }
-        .cardbtn{
-          padding-left: 20px;
-          padding-right: 20px;
-          padding-top: 8px;
-          padding-bottom: 8px;
-          font-size: 12px;
-          margin-top: 5px;
+#part-2 {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  margin-top: 80px;
+  /* border: 1px solid red; */
+  /* z-index: -1; */
+}
+
+#Fetch-Product {
+  display: flex;
+  margin: auto;
+  width: 85%;
+  margin-top: 20px;
+  column-gap: 10px;
+}
+
+#data-list-wrapper {
+  /* border: 1px solid rgb(26, 68, 44); */
+  display: grid;
+  width: 73%;
+  grid-template-columns: repeat(1, 1fr);
+  margin: auto;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.card-list {
+  /* border: 1px solid red; */
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(2, 1fr);
+  margin: auto;
+  gap: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.card-list > div > img {
+  width: 100%;
+  height: 50%;
+}
+
+.card {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  padding: 10px;
+  /* border: 1px solid red; */
+  text-align: center;
+  border-radius: 10px;
+}
+.cardbtn {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 13px;
+  margin-top: 5px;
   background-color: #611973;
   border: none;
   color: white;
-        }
-        .cardbtn1{
-          padding-left: 20px;
-          padding-right: 20px;
-          padding-top: 8px;
-          padding-bottom: 8px;
-          font-size: 12px;
-          margin-top: 5px;
-          background-color: orangered;
-          border: none;
-          color: white;
-        }
-        #sidebar {
-          display: flex;
-          flex-direction: column;
-          width: 25%;
-          background-color: rgb(251, 251, 251);
-          box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
-        }
-        
-       input{
-        margin-top: 8px;
-        height: 20px;
-       }
-        
-        
-       
-       
-        
-       
-        
+}
+.cardbtn1 {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 13px;
+  margin-top: 5px;
+  background-color: orangered;
+  border: none;
+  color: white;
+}
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding: 10px;
+  background-color: rgb(235, 235, 235);
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+input {
+  margin-top: 8px;
+  height: 20px;
+}
+#title {
+  text-align: center;
+  font-size: 20px;
+}
+#addproduct,
+#updatebtn {
+  margin-top: 5px;
+  background-color: #611973;
+  color: white;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 15px;
+}
+#card-body1{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  margin: auto;
+}
+#editbtn{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-between;
+  width: 200px;
+}
+#product-name,#product-img,#product-price,#product-category,#product-brand,#product-color,#product-age,#product-sleeve,
+#product-neck,#product-type,#product-pattern,#product-material,#product-gender
+{
+  color: black;
+  font-size: 16px;
+}
+
+
+#Update-product-name,#Update-product-img,#Update-product-price,#Update-product-category,#Update-product-brand,#Update-product-color,#Update-product-age,#Update-product-quantity,
+#Update-product-sleeve,#Update-product-neck,#Update-product-type,#Update-product-pattern,#Update-product-material,#Update-product-gender
+{
+  font-size: 16px;
+  color: black;
+}
+
+
+
+
+#part4{
+  display: flex;
+  margin: auto;
+  margin-top: 15px;
+      /* border: 1px solid red; */
+  width: 100%;
+  /* border: 1px solid red;   */
+  }
+
+  
+#footer{
+display: flex;
+flex-direction: column;
+margin: auto;
+width: 100%;
+height: auto;
+background-color: rgb(217,243,244);
+color: rgb(0, 0, 0);
+}
+#footer-top{
+display: flex;
+grid-template-columns: repeat(6,1fr);
+margin: auto; 
+justify-content: space-between;
+
+height:400px;
+
+
+width: 90%;
+}
+#list1,#list2,#list3,#list4{
+display: flex;
+flex-direction: column;
+margin: auto;
+color: #000;
+align-content: stretch;
+
+}
+#list1>ul,#list2>ul{
+list-style-type: none;
+}
+
+.copy{
+display: flex;
+justify-content: flex-end;
+margin: auto; 
+column-gap: 20px;
+
+height:auto;
+vertical-align: sub;
+width: 90%;
+padding-bottom: 50px;
+
+}
+
+#Admin{
+display: none;
+justify-content: center;
+width: 90%;
+margin: auto;
+background-color:rgb(21, 19, 19) ;
+color: white;
+
+}
+#Admin>button{
+background-color:rgb(21, 19, 19) ;
+color: white;
+border: none;
+font-size: 15px;
+}

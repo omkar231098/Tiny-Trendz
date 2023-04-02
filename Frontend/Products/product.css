@@ -16,6 +16,7 @@
         height: 80px;
         background-color: #fff;
         z-index: 2;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
       }
       #logodiv {
         display: flex;
@@ -26,11 +27,12 @@
         column-gap: 38px;
         align-items: center;
       }
-      #searchbar,
-      ::placeholder {
+      #searchbar
+      {
         width: 300px;
         height: 25px;
         background-color: black;
+        color: white;
         border-radius: 5px;
         font-size: 13px;
         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -78,6 +80,7 @@
         border-radius: 90%;
         background-color: #ff5757;
         color: white;
+        display: none;
       }
       
       /* --------------------------------navbar-2 css */
@@ -108,7 +111,7 @@
         margin-top: 60px;
         width: 100%;
       
-        border: 1px solid rebeccapurple;
+        /* border: 1px solid rebeccapurple; */
         background: #ffd91c;
         box-sizing: border-box;
       }
@@ -351,8 +354,8 @@
     flex-direction: column;
      margin: auto;
      width: 100%;
-     margin-top: 160px;
-     border: 1px solid red;
+     margin-top: 88px;
+     /* border: 1px solid red; */
      z-index: -1;
       }
 
@@ -364,7 +367,7 @@
       }
       
       #data-list-wrapper {
-        border: 1px solid rgb(26, 68, 44);
+        /* border: 1px solid rgb(26, 68, 44); */
         display: grid;
         width: 73%;
         grid-template-columns: repeat(1, 1fr);
@@ -373,11 +376,11 @@
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
       }
       .card-list{
-        border: 1px solid red;
+        /* border: 1px solid red; */
         display: grid;
         width: 100%;
         height: auto;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         margin: auto;
         gap: 10px;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
@@ -388,23 +391,71 @@
       }
       
       .card {
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
         padding: 10px;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         text-align: center;
+        border-radius: 8px;
       }
+
+      #cardhover{
+        position: relative;
+        display: inline-block;
+        width: auto;
+        height: auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    #cardhover::after{
+        content: "";
+        border-radius: 5px;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+         transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        #cardhover:hover{
+        -webkit-transform: scale(1.01, 1.01);
+        transform: scale(1.01, 1.01);
+        }
+        
+        #cardhover:hover::after{
+        opacity: 1;
+        }
+
+
+
+
+
       .cardbtn{
         padding-left: 20px;
         padding-right: 20px;
         padding-top: 10px;
         padding-bottom: 10px;
-        font-size: 12px;
+        font-size: 15px;
+        background-color: rgb(233, 97, 30);
+        color: white;
+        border-radius: 5px;
 
       }
       #sidebar {
         width: 25%;
-        background-color: rgb(251, 251, 251);
+        background-color: #611973;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+        color: white;
+       padding-top: 20px;
       }
       
       .sidebar-list{
@@ -420,9 +471,10 @@
       .sidebar-title {
         text-decoration: none;
         padding: 10px;
-        font-size: 15px;
+        font-size: 18px;
         font-weight: bold;
-        color: rgb(233, 97, 30);
+        color: #ffd91c
+       
         /* font-family: Arial, Helvetica, sans-serif; */
       }
       .area ul li {
@@ -432,20 +484,112 @@
       #reset {
         padding-left: 10px;
       }
-      #resetbtn {
+      #resetbtn ,#showbtn {
         color: white;
         background-color: rgb(233, 97, 30);
-        padding: 8px;
+       font-size: 15px;
+       padding-top: 5px;
+       padding-bottom: 5px;
+       padding-left: 10px;
+       padding-right: 10px;
         border: none;
         border-radius: 3px;
       }
       
       hr {
         border: none;
-        border-top: 1px dashed rgb(205, 205, 205);
+        border-top: 1px solid rgb(255, 255, 255);
         color: #fff;
         background-color: #fff;
         height: 1px;
-        width: 92%;
+        width: 95%;
       }
-      
+      #lower,#upper{
+        width: 200px;
+        height: 30px;
+        font-size: 13px;
+        color: rgb(255, 255, 255);
+        border: none;
+       
+      }
+
+      #sortfilter{
+        width: 100%;
+        height: 25px;
+        font-size: 13px;
+        background-color: rgb(233, 97, 30);
+        color: white;
+        border: none;
+      }
+
+/* footer */
+      #part4{
+        display: flex;
+        margin: auto;
+        margin-top: 15px;
+            /* border: 1px solid red; */
+        width: 100%;
+        /* border: 1px solid red;   */
+        }
+
+        
+#footer{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  background-color: rgb(217,243,244);
+  color: rgb(0, 0, 0);
+  }
+  #footer-top{
+    display: flex;
+    grid-template-columns: repeat(6,1fr);
+    margin: auto; 
+    justify-content: space-between;
+    
+    height:400px;
+    
+   
+   width: 90%;
+  }
+  #list1,#list2,#list3,#list4{
+    display: flex;
+   flex-direction: column;
+   margin: auto;
+   color: #000;
+   align-content: stretch;
+  
+  }
+  #list1>ul,#list2>ul{
+    list-style-type: none;
+  }
+  
+  .copy{
+    display: flex;
+    justify-content: flex-end;
+    margin: auto; 
+    column-gap: 20px;
+    
+    height:auto;
+    vertical-align: sub;
+   width: 90%;
+   padding-bottom: 50px;
+   
+  }
+  
+  #Admin{
+    display: none;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    background-color:rgb(21, 19, 19) ;
+    color: white;
+    
+  }
+  #Admin>button{
+    background-color:rgb(21, 19, 19) ;
+    color: white;
+    border: none;
+    font-size: 15px;
+  }

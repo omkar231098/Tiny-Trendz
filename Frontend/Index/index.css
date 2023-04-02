@@ -1,3 +1,7 @@
+
+body {
+  font-family: "Poppins", sans-serif;
+}
 #part1 {
 display: flex;
 margin: auto;
@@ -22,9 +26,10 @@ flex-direction: column;
 #part4{
 display: flex;
 margin: auto;
+margin-top: 15px;
     /* border: 1px solid red; */
 width: 100%;
-border: 1px solid red;  
+/* border: 1px solid red;   */
 }
 #product1 {
   display: grid;
@@ -310,6 +315,7 @@ border: 1px solid red;
   border-radius: 90%;
   background-color: #ff5757;
   color: white;
+  display: none;
 }
 
 /* --------------------------------navbar-2 css */
@@ -698,3 +704,67 @@ button {
 .slide:first-child {
   display: block;
 }
+
+
+/* footer */
+
+#footer{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  background-color: rgb(217,243,244);
+  color: rgb(0, 0, 0);
+  }
+  #footer-top{
+    display: flex;
+    grid-template-columns: repeat(6,1fr);
+    margin: auto; 
+    justify-content: space-between;
+    
+    height:400px;
+    
+   
+   width: 90%;
+  }
+  #list1,#list2,#list3,#list4{
+    display: flex;
+   flex-direction: column;
+   margin: auto;
+   color: #000;
+   align-content: stretch;
+  
+  }
+  #list1>ul,#list2>ul{
+    list-style-type: none;
+  }
+  
+  .copy{
+    display: flex;
+    justify-content: flex-end;
+    margin: auto; 
+    column-gap: 20px;
+    
+    height:auto;
+    vertical-align: sub;
+   width: 90%;
+   padding-bottom: 50px;
+   
+  }
+  
+  #Admin{
+    display: none;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    background-color:rgb(21, 19, 19) ;
+    color: white;
+    
+  }
+  #Admin>button{
+    background-color:rgb(21, 19, 19) ;
+    color: white;
+    border: none;
+    font-size: 15px;
+  }

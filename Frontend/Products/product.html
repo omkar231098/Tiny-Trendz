@@ -38,7 +38,7 @@
             <div>
               <input
                 id="searchbar"
-                type="text"
+                type="text"  oninput="search()"
                 placeholder="Search for a Category,Brand or Product"
               />
             </div>
@@ -93,7 +93,30 @@
    <div id="sidebar">
    
      <div id="reset"><Button onclick="reset()" id="resetbtn">Clear All</Button></div>
+   <!-- ------------------------------- -->
+   <div class="sidebar-categories area">
+    <br>
+  
    
+    <!-- <a href="#sidebar-categories" class="sidebar-title" >Sort By</a> -->
+    <!-- <hr> -->
+  
+   <div id="sidebar-categories" class="collapse show">
+       <ul class="sidebar-list">
+  
+        <select onchange="SortBox()" name="" id="sortfilter">
+          <option value="">Sort By</option>
+          <option value="desc">Price:High to Low</option>
+          <option value="asc">Price:Low to High</option>
+          <option value="ascorder">Name:A to Z</option>
+          <option value="descorder">Name:Z to A</option>
+        </select>
+  
+        
+  
+       </ul>
+    </div>
+  </div>
     <!-------------------------------------------------------------Brand Category-------------------------------------------------------------------->
    <div class="sidebar-categories area">
      <br>
@@ -227,7 +250,7 @@
         <br>
    
        <div>
-             <button onclick="handlefilter()" >Show Products</button>
+             <button id="showbtn" onclick="handlefilter()" >Show Products</button>
        </div>
    
        </ul>
@@ -246,6 +269,176 @@
   
  </part2>
 
+
+ <part4 id="part4"> 
+
+  <footer id="footer">
+    <div id="footer-top">
+       <div id="list1">
+        <ul>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">CATEGORIES</a></li>
+          <br>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Clothing & Fashion</a></li>
+          <br>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Toys</a></li>
+          <br>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Books & CDs</a></li>
+          <br>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">School Supplies</a></li>
+          <br>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Birthday Party Supplies</a></li>
+          <br>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Baby Diapering</a></li>
+          <br>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68); " href="#"></a></li>
+          <br>
+          <li><a style="text-decoration: none; color: rgb(52, 58, 68);" href="#"></a></li>
+  
+  
+      </ul>
+    
+    </div>
+    <div id="list2">
+     <ul>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">FIRSTCRY PARENTING</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px; " href="#">Getting Pregnant</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Pregnancy</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Baby</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Toddler</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Preschooler</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Big Kid</a></li>
+        <br>
+        <li><a  href="#"></a></li>
+        <br>
+        <li><a href="#"></a></li>
+        
+        
+    </ul>
+    </div>
+    <div id="list2">
+      <ul>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">SHIPPING & POLICIES</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Payments</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Shipping Policy</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Return & Replacement Policy</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Cancellation Policy</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Terms of Use</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
+        <br>
+        <li><a href="#"></a></li>
+        <br>
+        <li><a href="#"></a></li>
+        <br>
+        <li><a href="#"></a></li>
+  
+        </ul>
+    </div>
+    <div id="list2">
+  
+      <ul>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">CONNECT WITH US</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Facebook</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Instagram</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Twitter</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Youtube</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Linkedin</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
+        <br>
+        <li><a href="#"></a></li>
+        <br>
+        <li><a href="#"></a></li>
+        <br>
+        <li><a href="#"></a></li>
+  
+        </ul>
+     
+    </div>
+    <div id="list2">
+  
+      <ul>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">REGIONAL PARENTING</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Hindi Parenting</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Marathi Parenting</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Bangla Parenting</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Arabia Parenting</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry UAE Parenting</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">GlobalBees Shopping</a></li>
+        <br>
+        <li><a  style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Stores & Playschool</a></li>
+  
+        </ul>
+    </div>
+    <div id="list2">
+  
+      <ul>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">SHOP INTERNATIONAL</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry UAE</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry KSA</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry KSA (English)</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry KSA (English)</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Arabia: Shopping & Parenting</a></li>
+        <br>
+        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
+        <br>
+        <li><a  style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
+        <br>
+        <li><a  style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
+        <br>
+        <li><a  style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
+  
+        </ul>    
+    </div>
+    
+   
+        
+  </div>
+  
+  <div class="copy"> 
+     <p> © 2023 Avis Rent A Car System, LLC </p>
+     <img width="100px"height="50px" style="padding-right: 10px;" src="https://www.avis.com/etc/designs/platform/clientlib/images/icon-norton.png" alt="">
+  </div>
+   
+  
+  <div id="Admin">
+   
+  <button onClick="window.location.href='adminlogin.html';">Admin</button>
+  </div>
+   
+  
+      
+  
+  
+  </footer>
+</part4>
 </body>
 </html>
 <script src="product.js"></script>

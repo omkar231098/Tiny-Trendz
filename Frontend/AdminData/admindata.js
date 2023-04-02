@@ -53,7 +53,7 @@ AddProductbtn.addEventListener("click", function (e) {
 });
 
 function registerUser(Name,Img,Price,Category,Brand,Color,Age,Sleeve,Neck,Type,Pattern,Material,Gender) {
-  fetch("http://localhost:4500/product/add", {
+  fetch("https://real-pink-bass-hose.cyclic.app/product/add", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -103,7 +103,7 @@ function registerUser(Name,Img,Price,Category,Brand,Color,Age,Sleeve,Neck,Type,P
 
 
 function fetchAndRenderEmployees() {
-  fetch("http://localhost:4500/product/", {
+  fetch("https://real-pink-bass-hose.cyclic.app/product/", {
     method: "GET",
     headers: {
       Authorization: localStorage.getItem("token"),
@@ -171,25 +171,48 @@ function renderCardList(data) {
     });
   }
 
-  function getCard(_id, name,img, price,category,brand,color,age,quantity,sleeve,neck,type,pattern,material,gender) {
+  function getCard(_id, img,price,category,brand,name,color,age,quantity,sleeve,neck,type,pattern,material,gender) {
     let card = `
-  <div class="card" id="cardhover" data-id=${_id} >
-  <div class="card__img">
-  
-  <img width="100%" src="https://cdn.fcglcdn.com/brainbees/images/products/300x364/13104089a.webp" alt="Car Image" />
-  <h3 class="card_item card_title">${name}</h3>
-  </div>
-  <div class="card__body">
-      <div  class="card__Button"  ><button class="cardbtn" id=${_id}>Update</button></div>
-      <div  class="card__Button1"  ><button  class="cardbtn1" id=${_id} >Delete</button></div> 
+    <div class="card" id="cardhover" data-id=${_id} >
+    <div class="card__img">
     
-    <hr>
-    <div class="card_item card_description">
-     Your Price $${price}
+    <img width="100%" src="${img}" alt="Car Image" />
+    <h3 class="card_item card_title">Name - ${name}</h3>
+    
     </div>
-    
-  </div>
-  </div>
+    <div class="card__body">
+        <div id="card-body1">
+            <div>
+                <p>Category - ${category}</p>
+                <p>Brand - ${brand}</p>
+                <p>Color - ${color}</p>
+                <p>Age - ${age}</p>
+                <p>Quantity - ${quantity}</p>
+                <p>sleeveType - ${sleeve}</p>
+            </div>
+            <div>
+                <p>NeckType - ${neck}</p>
+                <p>Type - ${type}</p>
+                <p>Pattern - ${pattern}</p>
+                <p>Material - ${material}</p>
+                <p>Gender - ${gender}</p>
+                <p>Price - ${price}/-</p>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div id="editbtn" >
+         <div  class="card__Button"  ><button class="cardbtn" id=${_id}>Update</button></div>
+        <div  class="card__Button1"  ><button  class="cardbtn1" id=${_id} >Delete</button></div> 
+        </div> 
+       
+      
+      
+      
+      
+    </div>
+    </div>
   `;
   
     return card;
@@ -198,7 +221,7 @@ function renderCardList(data) {
 
   // delete product
   function populateEditForms(currentId) {
-    fetch(`http://localhost:4500/product/delete/${currentId}`, {
+    fetch(`https://real-pink-bass-hose.cyclic.app/product/delete/${currentId}`, {
       method: "DELETE",
       headers: {
         Authorization: localStorage.getItem("token"),
@@ -223,7 +246,7 @@ function renderCardList(data) {
   // update the product
 
   function populateEditForms1(currentId) {
-    fetch(`http://localhost:4500/product/${currentId}`, {
+    fetch(`https://real-pink-bass-hose.cyclic.app/product/${currentId}`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -278,13 +301,13 @@ function renderCardList(data) {
 
   let userObj = {
     name:  Updatename.value,
-    price:  Updateprice.value,
+    price: + Updateprice.value,
     img:Updateimg.value,
     category:UpdateCategory.value,
     brand:Updatebrand.value,
     color:  Updatecolor.value,
-    age: Updateage.value,
-    quantity: Updatequantity.value,
+    age: +Updateage.value,
+    quantity: +Updatequantity.value,
 sleeve: Updatesleeve.value,
 neck: Updateneck.value,
 type: Updatetype.value,
@@ -296,7 +319,7 @@ gender:   Updategender.value,
     _id: UpdateCarIdValue,
   };
 
-  fetch(`http://localhost:4500/product/update/${UpdateCarIdValue}`, {
+  fetch(`https://real-pink-bass-hose.cyclic.app/product/update/${UpdateCarIdValue}`, {
     method: "PUT",
     body: JSON.stringify(userObj),
     headers: {
@@ -305,7 +328,10 @@ gender:   Updategender.value,
     },
   })
     .then((res) => res.json())
-    .then((data) => {});
+    .then((data) => 
+    
+      fetchAndRenderEmployees()
+    );
 
-  fetchAndRenderEmployees();
+  // fetchAndRenderEmployees();
 });

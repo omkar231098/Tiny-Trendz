@@ -9,13 +9,13 @@ function reset() {
   fetchAndRenderEmployees();
 }
 
-
+let bag=[]
 
 
 let mainSection = document.getElementById("data-list-wrapper");
 
 function fetchAndRenderEmployees() {
-  fetch("http://localhost:4500/product/", {
+  fetch("https://real-pink-bass-hose.cyclic.app/product/", {
     method: "GET",
     headers: {
       Authorization: localStorage.getItem("token"),
@@ -24,7 +24,7 @@ function fetchAndRenderEmployees() {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-
+bag=data
       mainSection.innerHTML = renderCardList(data);
 
       renderCardList(data);
@@ -40,10 +40,10 @@ function renderCardList(data) {
 
     <div class="card-list">
       ${data
-        .map((item) => getCard(item._id,item.img,item.price,item.category,item.brand,
-           item.name,  item.color, item.age, item.quantity, item.sleeve, item.neck ,
-           item.type,item.pattern,item.material,item.gender,
-           item.userID))
+        .map((item) => getCard(item._id,item.img,item.price,
+           item.name, 
+       
+           ))
         .join("")}
     </div>
   `;
@@ -71,12 +71,12 @@ function renderCardList(data) {
   });
 }
 
-function getCard(_id, name,img, price,category,brand,color,age,quantity,sleeve,neck,type,pattern,material,gender) {
+function getCard(_id, img, price,name) {
   let card = `
 <div class="card" id="cardhover" data-id=${_id} >
 <div class="card__img">
 
-<img width="100%" src="https://cdn.fcglcdn.com/brainbees/images/products/300x364/13104089a.webp" alt="Car Image" />
+<img width="100%" src="${img}" alt="Car Image" />
 <h3 class="card_item card_title">${name}</h3>
 </div>
 <div class="card__body">
@@ -85,7 +85,8 @@ function getCard(_id, name,img, price,category,brand,color,age,quantity,sleeve,n
   
   <hr>
   <div class="card_item card_description">
-   Your Price $${price}
+  <h3 class="card_item card_title">$${price}/-</h3>
+  
   </div>
   
 </div>
@@ -99,7 +100,7 @@ function getCard(_id, name,img, price,category,brand,color,age,quantity,sleeve,n
 
 
 function populateEditForms5(currentId) {
-  fetch(`http://localhost:4500/product/${currentId}`, {
+  fetch(`https://real-pink-bass-hose.cyclic.app/product/${currentId}`, {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -116,7 +117,7 @@ function populateEditForms5(currentId) {
 let load=data[0]
 registerUser(load)
       function registerUser(load) {
-        fetch("http://localhost:4500/cart/add", {
+        fetch("https://real-pink-bass-hose.cyclic.app/cart/add", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -127,9 +128,13 @@ registerUser(load)
           .then((response) => response.json())
           .then((data1) => {
             console.log(data1);
-           
+            alert("Product is Added in Cart")
           })
-          .catch((error) => console.error(error));
+          .catch((error) => {console.error(error)
+            alert("Product is Already in Cart")
+          });
+
+          
       }
 
 
@@ -154,37 +159,36 @@ registerUser(load)
 
 
 
+function SortBox(){
+    let sel=document.querySelector("#sortfilter").value;
+    if(sel=="desc"){
+        bag.sort((a,b)=>b.price-a.price)
+    }
+    if(sel=="asc"){
+        bag.sort((a,b)=>a.price-b.price)
+    }
+    if(sel=="descorder"){
+ 
+      bag.sort((a, b) => b.name.localeCompare(a.name));
+      console.log(bag)
+  }
+  if(sel=="ascorder"){
+    bag.sort((a, b) => a.name.localeCompare(b.name));
+      console.log(bag)
+  }
+  renderCardList(bag)
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function search(){
+  let q=document.querySelector("#searchbar").value
+ 
+ let newData=bag.filter(function(elem){
+     return elem.name.toLocaleLowerCase().includes(q.toLocaleLowerCase());
+ });
+ 
+ renderCardList(newData)
+ }
 
 
 
@@ -212,7 +216,7 @@ categoryCheckboxes.forEach(function(checkbox) {
 });
 
 function populateEditForms(brands) {
-  let url = "http://localhost:4500/product/bran?";
+  let url = "https://real-pink-bass-hose.cyclic.app/product/bran?";
   brands.forEach((brand, index) => {
     url += `brand=${brand}`;
     if (index < brands.length - 1) {
@@ -260,7 +264,7 @@ categoryCheckboxes1.forEach(function(checkbox) {
 });
 
 function populateEditForms1(brands) {
-  let url = "http://localhost:4500/product/slev?";
+  let url = "https://real-pink-bass-hose.cyclic.app/product/slev?";
   brands.forEach((brand, index) => {
     url += `sleeve=${brand}`;
     if (index < brands.length - 1) {
@@ -307,7 +311,7 @@ categoryCheckboxes2.forEach(function(checkbox) {
 });
 
 function populateEditForms2(brands) {
-  let url = "http://localhost:4500/product/patt?";
+  let url = "https://real-pink-bass-hose.cyclic.app/product/patt?";
   brands.forEach((brand, index) => {
     url += `pattern=${brand}`;
     if (index < brands.length - 1) {
@@ -353,7 +357,7 @@ categoryCheckboxes3.forEach(function(checkbox) {
 });
 
 function populateEditForms3(brands) {
-  let url = "http://localhost:4500/product/mat?";
+  let url = "https://real-pink-bass-hose.cyclic.app/product/mat?";
   brands.forEach((brand, index) => {
     url += `material=${brand}`;
     if (index < brands.length - 1) {
@@ -390,7 +394,7 @@ function handlefilter() {
   populateEditForms4(minPrice, maxPrice)
 
   function populateEditForms4(minPrice, maxPrice) {
-    let url = `http://localhost:4500/product/price?minPrice=${minPrice}&maxPrice=${maxPrice}`;
+    let url = `https://real-pink-bass-hose.cyclic.app/product/price?minPrice=${minPrice}&maxPrice=${maxPrice}`;
     fetch(url, {
       method: "GET",
       headers: {

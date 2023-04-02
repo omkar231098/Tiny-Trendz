@@ -46,7 +46,7 @@ registerUserButton.addEventListener("click", function (e) {
 
   function registerUser(UserName,  email, Password) {
     
-  fetch("http://localhost:4500/admin/register", {
+  fetch("https://real-pink-bass-hose.cyclic.app/admin/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -87,7 +87,7 @@ LoginUserButton.addEventListener("click", function (e) {
   });
   
   function registerUser1(UserName, Password) {
-    fetch("http://localhost:4500/admin/login", {
+    fetch("https://real-pink-bass-hose.cyclic.app/admin/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
