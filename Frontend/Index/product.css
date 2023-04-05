@@ -65,6 +65,7 @@
         background-color: #611973;
         padding: 10px 20px 10px 20px;
         border-radius: 50px;
+        display: none;
       }
       
       /* .notification:hover {

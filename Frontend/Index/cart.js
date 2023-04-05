@@ -94,11 +94,7 @@ function renderCardList(data) {
      
     </div>    
   <div  class="card__Button"  ><button class="cardbtn" id=${_id}>Delete</button></div>
-      <div id="adjustquantity">  
       
-      <div  class="card__Button1"  ><button  class="cardbtn1" id=${_id} >+</button></div> 
-      <div  class="card__Button2"  ><button  class="cardbtn1" id=${_id} >-</button></div> 
-      </div>
      
     
     <hr>

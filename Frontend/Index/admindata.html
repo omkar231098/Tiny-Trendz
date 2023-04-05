@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-    Cart Page
+    Admin Data
     </title>
     <!-- Google Fonts (poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,16 +20,16 @@
       rel="stylesheet"
     />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="../Cart/cart.css" />
+    <link rel="stylesheet" href="admindata.css" />
 <body>
     <part1 id="part1">
         <nav-1 id="navbar-1">
           <div id="logodiv">
             <div>
-              <a href="../Index/index.html"
+              <a href="index.html"
                 ><img
                   width="98%"
-                  src="C:\Users\Admin\Desktop\vestal-branch-2641\Frontend\Images\Pink and Purple Cute Kids Playground Logo.png"
+                  src="./Images/Pink and Purple Cute Kids Playground Logo.png"
                   alt="Logo"
               /></a>
             </div>
@@ -54,13 +54,13 @@
               <a style="text-decoration: none" href="">Track Order</a>
             </div>
             <div id="loginbox">
-              <a style="text-decoration: none; color: white" href="../Signup/signup.html">Login/Register</a>
+              <a style="text-decoration: none; color: white" href="index.html">Logout</a>
             </div>
             <div id="registerbox">
-              <a style="text-decoration: none; color: white" href="">Admin</a>
+              <a style="text-decoration: none; color: white" href="#">Admin</a>
             </div>
-            <div id="cartbox">
-              <a class="notification" style="text-decoration: none" href=""
+            <!-- <div id="cartbox">
+              <a class="notification" style="text-decoration: none" href="../Cart/cart.html"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -75,44 +75,98 @@
                 </svg>
                 <span class="badge">4</span></a
               >
-            </div>
+            </div> -->
           </div>
         </nav-1>
   
-        <nav id="pricedata">
-<!-- <div id="pricebox">
-    <div id="totalproduct">Total Products <h3 id="valuetotal">0</h3></div>
-    <div id="totalprice">Total Price <h3 id="valueprice">0 /-</h3> </div>
-    <div id="payment">Continue Payment</div>
-</div> -->
-<div id="cart-info">
-  <div>
-    <div>Cart Total Price : <span id="valueprice">0</span></div>
-    <div>Total Items : <span id="valuetotal">0</span></div>
-    <div><bUtton onClick="window.location.href='../Payment/payment.html'" id="place-order-btn">Place Order</bUtton></div>
-  </div>
-</div>
-
-        </nav>
+        
+        
+      </part1>
 
 
 
+ <part2 id="part-2">
+  <div id="Fetch-Product"> 
+     
+    <!---------------------------------------------------------------Sidebar div---------------------------------------------------------------------->
+   <div id="sidebar">
+   <h3 id="title">Add Product</h3>
+    
+   <input type="text" placeholder="Name Of Product" id="product-name">
+   <input type="text" placeholder="Image of Product" id="product-img">
+   <input type="number" placeholder="Price Of Product" id="product-price">
+     
+   <input type="text" placeholder="Category" id="product-category">
+   <input type="text" placeholder="Brand" id="product-brand">
+   <input type="text" placeholder="Color" id="product-color">
+     
+   <input type="number" placeholder="Age" id="product-age">
+   <!-- <input type="text" placeholder="quantity" id="product-quantity"> -->
+   <input type="text" placeholder="Sleeve" id="product-sleeve">
+
+     
+   <input type="text" placeholder="Neck" id="product-neck">
+   <input type="text" placeholder="Type" id="product-type">
+   <input type="text" placeholder="Pattern" id="product-pattern">
+     
+   <input type="text" placeholder="Material" id="product-material">
+   <input type="text" placeholder="Gender" id="product-gender">
+   
+   <button id="addproduct">Add</button>
+    
+   <br>
+   <br>
+   <h3 id="title">Update Product</h3>
+    
+   <input type="text" placeholder="Name Of Product" id="Update-product-name">
+   <input type="text" placeholder="Image of Product" id="Update-product-img">
+   <input type="number" placeholder="Price Of Product" id="Update-product-price">
+     
+   <input type="text" placeholder="Category" id="Update-product-category">
+   <input type="text" placeholder="Brand" id="Update-product-brand">
+   <input type="text" placeholder="Color" id="Update-product-color">
+     
+   <input type="number" placeholder="Age" id="Update-product-age">
+   <input type="number" placeholder="Quantity" id="Update-product-quantity">
+   <input type="text" placeholder="Sleeve" id="Update-product-sleeve">
+
+     
+   <input type="text" placeholder="Neck" id="Update-product-neck">
+   <input type="text" placeholder="Type" id="Update-product-type">
+   <input type="text" placeholder="Pattern" id="Update-product-pattern">
+     
+   <input type="text" placeholder="Material" id="Update-product-material">
+   <input type="text" placeholder="Gender" id="Update-product-gender">
+   
+   <button id="updatebtn" >Update</button>
+    
+   
+    
+     
+   
+   
+   
+   
+    
+   
+ 
+   
+
+    
+   </div>
+   
+   
+   <!-------------------------------------------------------------Product Section Div----------------------------------------------------------------->
+     <div id="data-list-wrapper">
+       <!-- Append the Products Here -->
+     </div>
+   
+   </div>
+  
+ </part2>
 
 
-
-
-    </part1> 
-
-
-
-<part2 id="part-2">
-  <div id="data-list-wrapper">
-    <!-- Append the Products Here -->
-  </div>
-
-</part2>
-
-<part4 id="part4"> 
+ <part4 id="part4"> 
 
   <footer id="footer">
     <div id="footer-top">
@@ -281,7 +335,6 @@
   
   </footer>
 </part4>
-
 </body>
 </html>
-<script src="../Cart/cart.js"></script>
+<script src="admindata.js"></script>

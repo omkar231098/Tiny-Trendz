@@ -101,7 +101,7 @@ LoginUserButton.addEventListener("click", function (e) {
       .then((data) =>{console.log(data)
      localStorage.setItem("token",data.token)
     
-     window.open("../AdminData/admindata.html");
+     window.open("admindata.html");
      
       } )
       .catch((error) => console.error(error));

@@ -197,9 +197,8 @@ function search(){
 // filter codes
 const categoryCheckboxes = document.querySelectorAll('input[name="checkbox-filter-1"]');
 
+let previousCategories = [];
 
-
-// brands filter
 categoryCheckboxes.forEach(function(checkbox) {
   checkbox.addEventListener('change', function() {
     // Get all the selected category values
@@ -209,9 +208,15 @@ categoryCheckboxes.forEach(function(checkbox) {
         selectedCategories.push(checkbox.value);
       }
     });
+    
+    // If no categories are selected, show all products
+    if (selectedCategories.length === 0) {
+      selectedCategories = previousCategories;
+    }
+    
     // Update the display with the selected categories
-     populateEditForms(selectedCategories);
-     console.log(selectedCategories)
+    populateEditForms(selectedCategories);
+    previousCategories = selectedCategories;
   });  
 });
 
@@ -243,6 +248,52 @@ function populateEditForms(brands) {
       // handle error
     });
 }
+
+
+// categoryCheckboxes.forEach(function(checkbox) {
+//   checkbox.addEventListener('change', function() {
+   
+//     const selectedCategories = [];
+//     categoryCheckboxes.forEach(function(checkbox) {
+//       if (checkbox.checked) {
+//         selectedCategories.push(checkbox.value);
+//       }
+      
+//     });
+   
+//      populateEditForms(selectedCategories);
+//      console.log(selectedCategories)
+//   });  
+// });
+
+// function populateEditForms(brands) {
+//   let url = "https://real-pink-bass-hose.cyclic.app/product/bran?";
+//   brands.forEach((brand, index) => {
+//     url += `brand=${brand}`;
+//     if (index < brands.length - 1) {
+//       url += "&";
+//     }
+//   });
+//   fetch(url, {
+//     method: "GET",
+//     headers: {
+//       "content-type": "application/json",
+//       Authorization: localStorage.getItem("token"),
+//     },
+//   })
+//     .then((res) => {
+//       if (res.ok) {
+//         return res.json();
+//       }
+      
+//     })
+//     .then((data) => {
+//       renderCardList(data);
+//     })
+//     .catch((error) => {
+      
+//     });
+// }
 
 const categoryCheckboxes1 = document.querySelectorAll('input[name="checkbox-filter-3"]');
 

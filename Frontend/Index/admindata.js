@@ -239,7 +239,7 @@ function renderCardList(data) {
       .catch((error) => {
         // handle error
       });
-  
+      alert("Product has been Deleted");
     fetchAndRenderEmployees();
   }
 
@@ -292,7 +292,7 @@ function renderCardList(data) {
 
 
   UpdateCarbtn.addEventListener("click", function (e) {
-  alert("Update the Product Data Successfully");
+ 
   e.preventDefault();
   let UpdateCarIdValue =  UpdateProductIDValue;
 
@@ -328,10 +328,11 @@ gender:   Updategender.value,
     },
   })
     .then((res) => res.json())
-    .then((data) => 
+    .then((data) => {}
     
-      fetchAndRenderEmployees()
+     
     );
+    alert("Update the Product Data Successfully");
+  fetchAndRenderEmployees();
 
-  // fetchAndRenderEmployees();
 });

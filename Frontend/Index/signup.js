@@ -96,7 +96,7 @@ LoginUserButton.addEventListener("click", function (e) {
       .then((response) => response.json())
       .then((data) =>{console.log(data)
      localStorage.setItem("token",data.token)
-     window.open("../Products/product.html");
+     window.open("product.html");
      
       } )
       .catch((error) => console.error(error));
