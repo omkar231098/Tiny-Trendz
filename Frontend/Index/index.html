@@ -20,7 +20,185 @@
       rel="stylesheet"
     />
     <!-- Stylesheet -->
+   
     <link rel="stylesheet" href="index.css" />
+    <style>
+      
+      /* width between 500px to 900px */
+      @media only screen and (min-width: 500px) and (max-width: 1080px){
+        #product1 {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+         
+        }
+
+        #childdiv{
+          display: grid;
+  grid-template-columns: repeat(4, 1fr);
+        }
+        
+       
+
+        #viewall{
+          display: none;
+
+        }
+  
+        #childdiv9 {
+display:none;
+
+}
+#childdiv4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+ 
+}
+
+#childdiv2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+ 
+}
+#div2{
+  display: none;
+}
+
+#childdiv3 {
+  display: none;
+
+ 
+}
+#div3{
+  display: none;
+}
+#childdiv6 {
+display:none;
+
+} 
+
+#navhide{
+  display: none;
+}
+
+      }
+
+       /* width between 200px to 500px */
+      @media only screen and (min-width: 200px) and (max-width: 500px){
+        #product1 {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+         
+        }
+
+        #childdiv{
+          display: grid;
+  grid-template-columns: repeat(2, 1fr);
+        }
+        #childdiv1{
+
+display: grid;
+grid-template-columns: repeat(1, 1fr);
+}
+
+        #viewall{
+          display: none;
+
+        }
+
+        #childdiv4 {
+  display: none;
+
+ 
+}
+#childdiv2 {
+  display: none;
+
+ 
+}
+#div2{
+  display: none;
+}
+
+#childdiv3 {
+  display: none;
+
+ 
+}
+
+#div3{
+  display: none;
+}
+
+#childdiv6 {
+display:none;
+
+}
+
+#childdiv11{
+          display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: auto;
+row-gap: 10px;
+  /* border: 1px solid rebeccapurple; */
+  width: 80%;
+  text-align: center;
+        }
+
+        #childdiv12 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+ row-gap: 10px;
+  margin: auto;
+
+  /* border: 1px solid rebeccapurple; */
+  width: 80%;
+  text-align: center;
+}
+
+
+#divtitle{
+  display: none;
+
+}
+
+#bigimg{
+  display: none;
+}
+
+#pic6{
+  display: none;
+}
+
+#childdiv5 {
+  display: none;
+}
+
+#childdiv8 {
+  display: none;
+}
+#childdiv7{
+  display: none;
+}
+
+#childdiv9{
+  display: none;
+}
+#childdiv10{
+  display: none;
+}
+#picdiv{
+  display: none;
+}
+
+#navhide{
+  display: none;
+}
+#hidesearch{
+  display: none;
+}
+      }
+      
+          </style>
   </head>
 
   <body>
@@ -36,7 +214,7 @@
             /></a>
           </div>
 
-          <div>
+          <div id="hidesearch">
             <input
               id="searchbar"
               type="text"
@@ -46,13 +224,13 @@
         </div>
 
         <div id="navmenu1">
-          <div>
+          <div id="navhide">
             <a style="text-decoration: none" href="">Stores & Pre-Schools</a>
           </div>
-          <div>
+          <div id="navhide">
             <a style="text-decoration: none" href="">Support</a>
           </div>
-          <div>
+          <div id="navhide">
             <a style="text-decoration: none" href="">Track Order</a>
           </div>
           <div id="loginbox">
@@ -2209,7 +2387,8 @@
       <br />
 
       <div id="picdiv">
-        <div>
+        <div id="divtitle">
+        
           <img
             width="100%"
             height="100%"
@@ -2217,7 +2396,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="divtitle">
           <img
             width="100%"
             height="100%"
@@ -2225,7 +2404,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="divtitle">
           <img
             width="100%"
             height="100%"
@@ -2233,7 +2412,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="divtitle">
           <img
             width="100%"
             height="100%"
@@ -2241,7 +2420,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div >
           <img
             width="100%"
             height="100%"
@@ -2253,6 +2432,7 @@
 
       <div id="childdiv">
         <div>
+         
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_summer_080323_06.jpg"
@@ -2326,6 +2506,7 @@
 
       <div id="childdiv">
         <div>
+      
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_spring_01032022_19.jpg"
@@ -2558,7 +2739,7 @@
       <br />
       <!-- big images -->
       <div id="picdiv">
-        <div>
+        <div id="bigimg"> 
           <img
             width="100%"
             height="100%"
@@ -2566,7 +2747,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="bigimg"> 
           <img
             width="100%"
             height="100%"
@@ -2574,7 +2755,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="bigimg">
           <img
             width="100%"
             height="100%"
@@ -2582,7 +2763,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="bigimg">
           <img
             width="100%"
             height="100%"
@@ -2596,6 +2777,7 @@
 
       <div id="childdiv1">
         <div>
+      
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/fashion_desktop_summer_080323_25.jpg"
@@ -2609,14 +2791,14 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="div2">
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/960_147_desktop_summer_080323_27_01.jpg"
             alt=""
           />
         </div>
-        <div>
+        <div id="div2">
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/960_147_desktop_summer_080323_27_02.jpg"
@@ -2626,6 +2808,7 @@
       </div>
 
       <div id="childdiv2">
+       
         <div>
           <img
             width="100%"
@@ -2710,7 +2893,7 @@
       </div>
 
       <div id="picdiv">
-        <div>
+        <div id="div3">
           <img
             width="100%"
             height="100%"
@@ -2722,6 +2905,7 @@
 
       <div id="childdiv3">
         <div>
+
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer_desktop_essentials_200323_03.jpg"
@@ -2773,7 +2957,7 @@
       </div>
 
       <div id="picdiv">
-        <div>
+        <div id="div3">
           <img
             width="100%"
             height="100%"
@@ -2785,6 +2969,7 @@
 
       <div id="childdiv3">
         <div>
+         
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer_desktop_essentials_200323_11.jpg"
@@ -2848,6 +3033,7 @@
 
       <div id="childdiv4">
         <div>
+         
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer_desktop_feeding_&_kids_food_210323_02.jpg"
@@ -3032,6 +3218,7 @@
 
       <div id="childdiv6">
         <div>
+      
           <img
             width="100%"
             height="100%"
@@ -3321,6 +3508,7 @@
 
       <div id="childdiv3">
         <div>
+       
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate//summer_desktop_210323_42.jpg"
@@ -3384,6 +3572,7 @@
 
       <div id="childdiv4">
         <div>
+         
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate//summer_desktop_210323_50.jpg"
@@ -3701,6 +3890,7 @@
 
       <div id="picdiv">
         <div>
+          
           <img
             width="100%"
             height="100%"
@@ -3712,6 +3902,7 @@
 
       <div id="childdiv8">
         <div>
+          
           <img
             width="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate//summer_desktop_210323_180.jpg"
@@ -3837,6 +4028,7 @@
 
       <div id="childdiv1">
         <div>
+         
           <img
             width="100%"
             height="100%"
@@ -3855,6 +4047,7 @@
       </div>
 
       <div id="childdiv9">
+        
         <div>
           <img
             width="100%"
@@ -3922,6 +4115,7 @@
       </div>
 
       <div id="childdiv9">
+        
         <div>
           <img
             width="100%"
@@ -3989,15 +4183,16 @@
       </div>
 
       <div id="childdiv1">
-        <div>
-          <img
+        <div id="viewall">
+          <img 
             width="100%"
             height="100%"
             src="https://cdn.fcglcdn.com/brainbees/images/cattemplate//summer_desktop_210323_76.jpg"
             alt=""
           />
         </div>
-        <div>
+        <div id="viewall">
+        
           <img
             width="100%"
             height="100%"
@@ -4005,7 +4200,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="viewall">
           <img
             width="100%"
             height="100%"
@@ -4013,7 +4208,7 @@
             alt=""
           />
         </div>
-        <div>
+        <div id="viewall">
           <img
             width="100%"
             height="100%"
@@ -4025,6 +4220,7 @@
 
       <div id="childdiv4">
         <div>
+         
           <img
             width="100%"
             height="100%"
@@ -4158,6 +4354,7 @@
       <br />
       <div id="picdiv">
         <div>
+         
           <img
             width="100%"
             height="100%"
@@ -4169,6 +4366,7 @@
 
       <div id="childdiv10">
         <div>
+         
           <img
             width="100%"
             height="100%"
@@ -4416,7 +4614,7 @@
       </div>
 
       <div id="picdiv">
-        <div>
+        <div id="pic6">
           <img
             width="100%"
             height="100%"
@@ -4428,6 +4626,7 @@
 
       <div id="childdiv6">
         <div>
+       
           <img
             width="100%"
             height="100%"
