@@ -56,6 +56,7 @@
 ![2023-05-19 (3)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/4e074a11-baf7-48c9-84da-346bb2e3e263)
 
 
+
 <h2>Products Page</h2>
 
 
@@ -63,6 +64,18 @@
 
 
 ![2023-05-19 (4)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/530a943b-dae3-404d-a93b-a3c83ee62d7d)
+
+<h2>Cart Page</h2>
+
+
+
+
+
+
+
+
+
+
 
 
 <h2>Payment Page</h2>
