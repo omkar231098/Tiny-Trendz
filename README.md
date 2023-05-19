@@ -1,5 +1,21 @@
 # FirstCry Website Clone
 <h3 style="text-align: center;" >FirstCry is a leading e-commerce platform in India that specializes in baby and kids products. This repository contains the source code for the FirstCry website.</h3>
+
+<h2>Login Page</h2>
+
+
+
+![2023-05-19](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/e4c5ccc4-b711-4966-8168-b6113b871a9c)
+
+<h2>Register Page</h2>
+
+
+
+
+![2023-05-19](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/0f40f7dc-19ae-4694-9d3f-bc20ccfad3cc)
+
+
+
 <h2>Landing Page</h2>
 
 ![homepage](https://user-images.githubusercontent.com/109202596/235319224-05b1fc36-41db-4531-8b50-582c52a952e1.png)
