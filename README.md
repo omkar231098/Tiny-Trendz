@@ -20,6 +20,32 @@
 
 ![homepage](https://user-images.githubusercontent.com/109202596/235319224-05b1fc36-41db-4531-8b50-582c52a952e1.png)
 
+<h2>Middle Page</h2>
+
+
+![2023-05-19 (2)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/be6523d8-83f4-4e9e-a6be-68ca6582f24f)
+
+
+
+<h2>Footer Page</h2>
+
+
+
+![2023-05-19 (3)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/4e074a11-baf7-48c9-84da-346bb2e3e263)
+
+
+<h2>Products Page</h2>
+
+
+
+
+
+![2023-05-19 (4)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/530a943b-dae3-404d-a93b-a3c83ee62d7d)
+
+
+
+
+
 <h2>Features</h2>
 <li>Extensive product range with over 2 lakh products from more than 2,000 brands</li>
 <li>Detailed product descriptions and specifications, along with high-quality product images and videos</li>
