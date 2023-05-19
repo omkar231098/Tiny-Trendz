@@ -4,9 +4,9 @@
 <h2>Functionality</h2>
 <li>Storing the data of users in to database(MongoDB Atlas)</li>
 <li>Searching the Products</li>
-<li>User-friendly interface with easy navigation menus</li>
-<li>Competitive pricing and flexible payment options</li>
-<li>24/7 customer support via phone, email, or live chat</li>
+<li>Added Filtering Functionality on Products</li>
+<li>Added Sorting Functionality on Products</li>
+<li>Delete Functionality Added</li>
 
 <h2>Login Page</h2>
 
