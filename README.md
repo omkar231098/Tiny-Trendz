@@ -9,6 +9,11 @@
 
 <h2>Admin Side Functionality</h2>
 <li>Storing the data of users in to database(MongoDB Atlas)</li>
+<li>Add New Products</li>
+<li>Update Existing Products</li>
+<li>Delete Products</li>
+
+
 <h2>Login Page</h2>
 
 
