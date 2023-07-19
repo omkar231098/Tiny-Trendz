@@ -40,20 +40,23 @@
 
 <h2>Landing Page</h2>
 
-![homepage](https://user-images.githubusercontent.com/109202596/235319224-05b1fc36-41db-4531-8b50-582c52a952e1.png)
+![home](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/589d9eb0-43c3-47c7-8410-5534874ac191)
+
 
 <h2>Middle Page</h2>
 
+![mid](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/1f9ed8ef-7f20-4aff-ab6e-4c3b49350be7)
 
-![2023-05-19 (2)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/be6523d8-83f4-4e9e-a6be-68ca6582f24f)
+
 
 
 
 <h2>Footer Page</h2>
 
+![foot](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/d8962854-3f69-408e-9eb3-b9d9334d597b)
 
 
-![2023-05-19 (3)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/4e074a11-baf7-48c9-84da-346bb2e3e263)
+
 
 
 
