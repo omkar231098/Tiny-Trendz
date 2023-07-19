@@ -64,18 +64,20 @@
 
 
 
+![pro](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/2999b5c5-74cd-4683-a9cc-506926f5c2a7)
 
 
-![2023-05-19 (4)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/530a943b-dae3-404d-a93b-a3c83ee62d7d)
+
 
 <h2>Cart Page</h2>
 
+![cart](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/bdff31fa-71e0-43ae-82db-b1d6cec9a13f)
 
 
 
 
 
-![2023-05-19 (6)](https://github.com/omkar231098/vestal-branch-2641/assets/109202596/a52b44e9-a921-4409-9a66-7d78b66467bf)
+
 
 
 
