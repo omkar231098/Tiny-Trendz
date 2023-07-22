@@ -336,3 +336,33 @@ gender:   Updategender.value,
   fetchAndRenderEmployees();
 
 });
+
+
+
+
+
+const username = localStorage.getItem("username");
+
+// Update the content of the element with the username
+const usernameElement = document.getElementById("usernamedisplay");
+if (usernameElement) {
+  usernameElement.textContent = (username || "Login/Register");
+}
+
+
+
+const logoutButton = document.getElementById("logoutbox");
+
+// Add event listener for logout button/link
+logoutButton.addEventListener("click", function() {
+  // Clear token and username from localStorage
+  localStorage.removeItem("token");
+  localStorage.removeItem("username");
+  
+  // Update the content of the element with the username to be empty
+  const usernameElement = document.getElementById("usernamedisplay");
+  if (usernameElement) {
+    usernameElement.textContent = "Login/Register";
+  }
+  window.open("index.html", "_blank");
+});

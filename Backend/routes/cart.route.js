@@ -55,6 +55,19 @@ cartRouter.put("/update/:userid",authenticate, async (req, res) => {
   }
 });
 
+
+cartRouter.patch("/update/:userid",authenticate, async (req, res) => {
+  const { userid } = req.params;
+  const payload = req.body;
+  try {
+    await CartModel.findByIdAndUpdate({ _id: userid }, payload);
+    res.status(200).send("Product has been updated");
+  } catch (err) {
+    res.status(404).send({ msg: "Not able to update" });
+  }
+});
+
+
 // delete route to delete the product
 cartRouter.delete("/delete/:userid",authenticate, async (req, res) => {
   const { userid } = req.params;

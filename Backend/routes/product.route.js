@@ -6,7 +6,7 @@ const { authenticate } = require("../middlewares/authenticator");
 
 
 // get routes access all products
-productRouter.get("/",authenticate,async (req, res) => {
+productRouter.get("/",async (req, res) => {
   
   
   const token = req.headers.authorization;
@@ -138,6 +138,18 @@ productRouter.get("/price", async (req, res) => {
     res.status(404).send({ msg: "Not able to read" });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 // get particular product
 productRouter.get("/:userid", authenticate,async (req, res) => {

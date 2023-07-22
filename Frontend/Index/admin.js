@@ -44,9 +44,30 @@ registerUserButton.addEventListener("click", function (e) {
   });
 
 
-  function registerUser(UserName,  email, Password) {
+//   function registerUser(UserName,  email, Password) {
     
-  fetch("https://real-pink-bass-hose.cyclic.app/admin/register", {
+//   fetch("https://real-pink-bass-hose.cyclic.app/admin/register", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       name: UserName,
+//       email: email,
+//       password: Password,
+//     }),
+//   })
+//     .then((response) => response.json())
+//     .then((data) =>{console.log(data)
+//     alert("Register User Successfully")
+//     })
+//     .catch((error) => {console.error(error)
+//         alert("Please Check the Details Again!!")
+//     });
+// }
+function registerUser(UserName,  email, Password) {
+    
+  fetch("https://real-pink-bass-hose.cyclic.app/user/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -59,51 +80,58 @@ registerUserButton.addEventListener("click", function (e) {
   })
     .then((response) => response.json())
     .then((data) =>{console.log(data)
-    alert("Register User Successfully")
+      alert("Register User Successfully");
     })
-    .catch((error) => {console.error(error)
-        alert("Please Check the Details Again!!")
-    });
+    
+    .catch((error) => console.error(error));
 }
 
 
 // Login form code======>
 
 
-
-
 LoginUserButton.addEventListener("click", function (e) {
-  
-      alert("Login User Successfully");
-  
-      e.preventDefault();
-  
-      let UserName = LoginUserEmail.value;
-     
-      let Password = LoginUserPassword.value;
-  
-      registerUser1(UserName, Password);
-   
-  });
-  
-  function registerUser1(UserName, Password) {
-    fetch("https://real-pink-bass-hose.cyclic.app/admin/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-       email: UserName,
-        password: Password
-      }),
+  e.preventDefault();
+
+  let UserName = LoginUserEmail.value;
+  let Password = LoginUserPassword.value;
+
+  loginUser(UserName, Password);
+});
+
+function loginUser(email, password) {
+  fetch("https://real-pink-bass-hose.cyclic.app/user/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password,
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
     })
-      .then((response) => response.json())
-      .then((data) =>{console.log(data)
-     localStorage.setItem("token",data.token)
-    
-     window.open("admindata.html");
-     
-      } )
-      .catch((error) => console.error(error));
-  }
-  
+    .then((data) => {
+      if (data && data.token) {
+        console.log(data);
+        alert("Login Admin Successfully");
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("username", data.username); // Assuming the response contains the username
+        window.open("admindata.html", "_blank");
+      } else {
+        throw new Error("Invalid response data");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Failed to login. Please check your credentials.");
+    });
+}
+
+
+

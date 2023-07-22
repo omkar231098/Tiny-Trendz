@@ -7,6 +7,14 @@
     <title>
       Products
     </title>
+
+    <!-- footer css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css">
+    
+    
     <!-- Google Fonts (poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,69 +29,114 @@
     />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="product.css" />
+
+    <!-- navbar css -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 <body>
     
-    <part1 id="part1">
-        <nav-1 id="navbar-1">
-          <div id="logodiv">
-            <div>
-              <a href="index.html"
-                ><img
-                  width="98%"
-                  src="./Images/Pink and Purple Cute Kids Playground Logo.png"
-                  alt="Logo"
-              /></a>
-            </div>
-  
-            <div>
-              <input
-                id="searchbar"
-                type="text"  oninput="search()"
-                placeholder="Search for a Category,Brand or Product"
-              />
-            </div>
-          </div>
-  
-          <div id="navmenu1">
-            <div>
-              <a style="text-decoration: none" href="">Stores & Pre-Schools</a>
-            </div>
-            <div>
-              <a style="text-decoration: none" href="">Support</a>
-            </div>
-            <div>
-              <a style="text-decoration: none" href="">Track Order</a>
-            </div>
-            <div id="loginbox">
-              <a style="text-decoration: none; color: white" href="signup.html">Login/Register</a>
-            </div>
-            <div id="registerbox">
-              <a style="text-decoration: none; color: white" href="">Admin</a>
-            </div>
-            <div id="cartbox">
-              <a class="notification" style="text-decoration: none" href="cart.html"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="30"
-                  height="30"
-                  fill="currentColor"
-                  class="bi bi-cart"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-                  />
-                </svg>
-                <span class="badge">4</span></a
-              >
-            </div>
-          </div>
-        </nav-1>
-  
+ 
+  <part1 id="part1">
+    <header>
+      <!-- contact content -->
+      <div class="header-content-top">
+        <div class="content">
+          <span><i class="fas fa-phone-square-alt"></i> (00)0000-0000</span>
+          <span><i class="fas fa-envelope-square"></i>tinytrendz@gmail.com</span>
+        </div>
+      </div>
+      <!-- / contact content -->
+      <div class="container">
+        <!-- logo -->
+      <a href="./index.html"><strong class="logo"><label style="color: rebeccapurple;" for="">Tiny</label><label style="color: #ff5757;" for="">Trendz</label></strong></a>
         
-        
-      </part1>
+        <!-- open nav mobile -->
+    
+        <!--search -->
+        <label class="open-search" for="open-search">
+          <i class="fas fa-search"></i>
+                <input class="input-open-search" id="open-search" type="checkbox" name="menu" />
+        <div class="search">
+          <button class="button-search"><i class="fas fa-search"></i></button>
+          <input type="text" placeholder="What are you looking for?" class="input-search"/>
+        </div>
+        </label>
+        <!-- // search -->
+        <nav class="nav-content">
+          <!-- nav -->
+          <ul class="nav-content-list">
+            <li class="nav-content-item account-login">
+              <label class="open-menu-login-account" for="open-menu-login-account">
+    
+                <input class="input-menu" id="open-menu-login-account" type="checkbox" name="menu" />
+    
+                <i class="fas fa-user-circle"></i><span class="login-text"><strong id="usernamedisplay"></strong></span> <span class="item-arrow"></span>
+    
+                <!-- submenu -->
+               
+                <ul class="login-list">
+                  <li class="login-list-item"><a href="./signup.html">Login/Register</a></li>
+                  <li class="login-list-item"><a href="./admin.html">Admin Login</a></li>
+                  <li class="login-list-item"><a id="logoutbox" href="#">logout</a></li>
+                  </label>
+                </ul>
+            </li>
+            <li class="nav-content-item"><a class="nav-content-link" href="#"><i class="fas fa-heart"></i></a></li>
 
+            <li class="nav-content-item"><a class="nav-content-link" href="./cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <!-- call to action -->
+          </ul>
+        </nav>
+      </div>
+      <!-- nav navigation commerce -->
+      <div class="nav-container">
+        <nav class="all-category-nav">
+          <label class="open-menu-all" for="open-menu-all">
+            <input class="input-menu-all" id="open-menu-all" type="checkbox" name="menu-open" />
+            <span class="all-navigator"><i class="fas fa-bars"></i> <span>All category</span> <i class="fas fa-angle-down"></i>
+              <i class="fas fa-angle-up"></i>
+            </span>
+    
+            <ul class="all-category-list">
+              <li class="all-category-list-item"><a href="#" class="all-category-list-link">Boys Fashion<i class="fas fa-angle-right"></i></a>
+                <div class="category-second-list">
+                  <ul class="category-second-list-ul">
+                    <li class="category-second-item"><a href="#">All Shoes</a></li>
+                    <li class="category-second-item"><a href="#">Lifestyle</a></li>
+                    <li class="category-second-item"><a href="#">Jordan </a></li>
+                    <li class="category-second-item"><a href="#">Running </a></li>
+                    <li class="category-second-item"><a href="#">Football </a></li>
+                    <li class="category-second-item"><a href="#">Basketball</a></li>
+                  </ul>
+    
+                  <div class="img-product-menu"><img src="https://i.ibb.co/Vvndkmy/banner.jpg"></div>
+                  </div>
+              </li>
+              <li class="all-category-list-item"><a href="#" class="all-category-list-link">Furniture <i class="fas fa-angle-right"></i></a></li>
+              <li class="all-category-list-item"><a href="#" class="all-category-list-link">Toys<i class="fas fa-angle-right"></i></a></li>
+              <li class="all-category-list-item"><a href="#" class="all-category-list-link">Computing<i class="fas fa-angle-right"></i></a></li>
+              <li class="all-category-list-item"><a href="#" class="all-category-list-link">Games<i class="fas fa-angle-right"></i></a></li>
+              <li class="all-category-list-item"><a href="" class="all-category-list-link">Automotive<i class="fas fa-angle-right"></i></a></li>
+    
+            </ul>
+          </label>
+    
+        </nav>
+        <nav class="featured-category">
+          <ul class="nav-row">
+            <li class="nav-row-list"><a href="./product.html" class="nav-row-list-link">Boys Fashion</a></li>
+            <li class="nav-row-list"><a href="#" class="nav-row-list-link">Girl Fashion</a></li>
+            <li class="nav-row-list"><a href="#" class="nav-row-list-link">Footwear</a></li>
+            <li class="nav-row-list"><a href="#" class="nav-row-list-link">Toys</a></li>
+            <li class="nav-row-list"><a href="#" class="nav-row-list-link">Diapering</a></li>
+            <li class="nav-row-list"><a href="#" class="nav-row-list-link">Feeding</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+
+    
+  </part1>
 
 
  <part2 id="part-2">
@@ -272,173 +325,81 @@
 
  <part4 id="part4"> 
 
-  <footer id="footer">
-    <div id="footer-top">
-       <div id="list1">
-        <ul>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">CATEGORIES</a></li>
-          <br>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Clothing & Fashion</a></li>
-          <br>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Toys</a></li>
-          <br>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Books & CDs</a></li>
-          <br>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">School Supplies</a></li>
-          <br>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Birthday Party Supplies</a></li>
-          <br>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Baby Diapering</a></li>
-          <br>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68); " href="#"></a></li>
-          <br>
-          <li><a style="text-decoration: none; color: rgb(52, 58, 68);" href="#"></a></li>
-  
-  
-      </ul>
-    
+  <footer class="new_footer_area bg_color">
+    <div class="new_footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18">Get in Touch</h3>
+                        <p>Don’t miss any updates of our new templates and extensions.!</p>
+                        <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                            <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                            <button class="btn btn_get btn_get_two" type="submit">Subscribe</button>
+                            <p class="mchimp-errmessage" style="display: none;"></p>
+                            <p class="mchimp-sucmessage" style="display: none;"></p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18">Download</h3>
+                        <ul class="list-unstyled f_list">
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Android App</a></li>
+                            <li><a href="#">ios App</a></li>
+                            <li><a href="#">Desktop</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">My tasks</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                        <ul class="list-unstyled f_list">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Term &amp; conditions</a></li>
+                            <li><a href="#">Reporting</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Support Policy</a></li>
+                            <li><a href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                        <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                        <div class="f_social_icon">
+                            <a href="#" class="fab fa-facebook"></a>
+                            <a href="#" class="fab fa-twitter"></a>
+                            <a href="#" class="fab fa-linkedin"></a>
+                            <a href="#" class="fab fa-pinterest"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bg">
+            <div class="footer_bg_one"></div>
+            <div class="footer_bg_two"></div>
+        </div>
     </div>
-    <div id="list2">
-     <ul>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">FIRSTCRY PARENTING</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px; " href="#">Getting Pregnant</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Pregnancy</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Baby</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Toddler</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Preschooler</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Big Kid</a></li>
-        <br>
-        <li><a  href="#"></a></li>
-        <br>
-        <li><a href="#"></a></li>
-        
-        
-    </ul>
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-7">
+                    <p class="mb-0 f_400">© TinyTrendz 2023 All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 col-sm-5 text-right">
+                    <p>Made by <i class="icon_heart"></i> in <a href="#" target="_blank">Omkar Dhanave</a></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="list2">
-      <ul>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">SHIPPING & POLICIES</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Payments</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Shipping Policy</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Return & Replacement Policy</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Cancellation Policy</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Terms of Use</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
-        <br>
-        <li><a href="#"></a></li>
-        <br>
-        <li><a href="#"></a></li>
-        <br>
-        <li><a href="#"></a></li>
-  
-        </ul>
-    </div>
-    <div id="list2">
-  
-      <ul>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">CONNECT WITH US</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Facebook</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Instagram</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Twitter</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Youtube</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">Linkedin</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
-        <br>
-        <li><a href="#"></a></li>
-        <br>
-        <li><a href="#"></a></li>
-        <br>
-        <li><a href="#"></a></li>
-  
-        </ul>
-     
-    </div>
-    <div id="list2">
-  
-      <ul>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">REGIONAL PARENTING</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Hindi Parenting</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Marathi Parenting</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Bangla Parenting</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Arabia Parenting</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry UAE Parenting</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">GlobalBees Shopping</a></li>
-        <br>
-        <li><a  style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Stores & Playschool</a></li>
-  
-        </ul>
-    </div>
-    <div id="list2">
-  
-      <ul>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 16px; font-weight: 600;"  href="#">SHOP INTERNATIONAL</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry UAE</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry KSA</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry KSA (English)</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry KSA (English)</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#">FirstCry Arabia: Shopping & Parenting</a></li>
-        <br>
-        <li><a style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
-        <br>
-        <li><a  style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
-        <br>
-        <li><a  style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
-        <br>
-        <li><a  style="text-decoration: none; color: rgb(52, 58, 68);  font-size: 13px;" href="#"></a></li>
-  
-        </ul>    
-    </div>
-    
-   
-        
-  </div>
-  
-  <div class="copy"> 
-     <p> © 2023 Avis Rent A Car System, LLC </p>
-     <img width="100px"height="50px" style="padding-right: 10px;" src="https://www.avis.com/etc/designs/platform/clientlib/images/icon-norton.png" alt="">
-  </div>
-   
-  
-  <div id="Admin">
-   
-  <button onClick="window.location.href='adminlogin.html';">Admin</button>
-  </div>
-   
-  
-      
-  
-  
-  </footer>
+</footer>
 </part4>
+
 </body>
 </html>
 <script src="product.js"></script>
