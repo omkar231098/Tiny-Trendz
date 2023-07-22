@@ -1,4 +1,4 @@
-# FirstCry Website Clone
+# FirstCry Website Clone (Tiny Trendz)
 <h3 style="text-align: center;" >Tiny Trendz is a leading e-commerce platform in India that specializes in baby and kids products. This repository contains the source code for the FirstCry website.</h3>
 <h2>Tech Stacks Used</h2>
 <li>HTML</li>
